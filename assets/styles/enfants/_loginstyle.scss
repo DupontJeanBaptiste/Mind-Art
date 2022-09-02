@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=Shrikhand&display=swap');
+
+body{
+    font-family: 'Arapey', serif;
+    color:rgb(3, 36, 90);  
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, #fcb52e, #fcb742, #fbb953, #f9bb62, #f7bd71, #fcbc80, #ffbb8e, #ffbc9c, #ffbcaf, #ffbfc4, #ffc4d7, #fccae7);
+}
+
+.frontbuttons{
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    margin-inline: 30%;
+    padding: 50px;
+}
+
+.mindart{
+    padding:40px;
+    text-align: center;
+}
+
+.alert{
+    text-align:center;
+    font-size: larger;
+    font-style: bold;
+}

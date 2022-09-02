@@ -1,0 +1,18 @@
+{% extends 'extentions/layouts/layout_seller.html.twig' %}
+
+
+
+{% block body %}
+
+<ul>
+
+  <li><a href="{{ path('seller_account') }}">Account</a></li>
+  <li><a href="{{ path('seller_managemygallery') }}">Gerer ma galerie</a></li>
+  <li><a href="{{ path('seller_messages') }}">Messages</a></li>
+  <li><a href="{{ path('seller_ordertracking') }}">Suivi de commande</a></li>
+  <li><a href="{{ path('seller_subscription') }}">Subscription</a></li>
+        
+</ul>
+
+{% endblock %}
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<title>Basket</title>
+
+{% block body %}
+    <h1>Basket</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ basket.id }}</td>
+            </tr>
+            <tr>
+                <th>Validation</th>
+                <td>{{ basket.validation ? 'Yes' : 'No' }}</td>
+            </tr>
+              <th>Status</th>
+                <td>{{ basket.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_basket_index') }}">back to list</a>
+
+    <a href="{{ path('app_basket_edit', {'id': basket.id}) }}">edit</a>
+
+    {{ include('basket/_delete_form.html.twig') }}
+{% endblock %}

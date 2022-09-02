@@ -1,0 +1,62 @@
+<div class="giga-div">
+    <div class="cardandinfo">
+        <div class="card card-gallery" id="card-gallery-{{ this.masterpiece.id }}" style="width: 18rem;">
+            {# --------> Card header <--------#}
+            <div class="card-header" id="card-header-gallery">
+                <p class="masterpiece-name">{{ this.masterpiece.name }}</p>
+                    <p>
+                        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInformationMasterpiece{{ this.masterpiece.id }}" aria-expanded="false" aria-controls="collapseInformationMasterpiece{{ this.masterpiece.id }}">
+                            <i class="bi bi-info-circle"></i>
+                        </button>
+                    </p>
+            </div>
+            {# --------> Card body <--------#}
+            <div class="card-body" id="card-body-gallery">
+                <img src="{{ this.masterpiece.picture }}" class="card-img" alt="{{ this.masterpiece.name }}">
+            </div>
+            {# --------> Card footer <--------#}
+            <div class="card-footer" id="card-footer-gallery">
+                <div class="like-overlay">
+                    <a class="like-action" id="like-action" href="{{ path('users_gallery_add_likelist', {'masterpieceId': this.masterpiece.id, 'userId': app.user.id})}}">
+                        <i class="bi {{ app.user.isInLikelist(this.masterpiece) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+                    </a>
+                    {% set likes = this.masterpiece.likers.snapshot|length %}
+                    <div class="like-count" {% if likes < 1 %} style="display: none"
+                                            {% elseif likes < 10 %} style="position:absolute; bottom:2.1rem; left:2rem;"
+                                            {% elseif likes > 9 %} style="position:absolute; bottom:2.1rem; left:1.6rem;"
+                                            {% endif %}>
+                        {{ likes }}
+                    </div>
+                </div>
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCommentMasterpiece{{ this.masterpiece.id }}" aria-expanded="false" aria-controls="collapseCommentMasterpiece{{ this.masterpiece.id }}">
+                    <i class="bi bi-chat-dots" ></i>
+                </button>
+                <a class="artist-action" id="artist-action" href="#">
+                    <i class="bi bi-person"></i>
+                </a>
+                <a class="basket-action" id="basket-action" href="#">
+                    <i class="bi bi-cart-plus"></i>
+                </a>
+            </div>
+        </div>
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal information" id="collapseInformationMasterpiece{{ this.masterpiece.id }}">
+                    <div class="card card-body" style="width: 300px;">
+                        {{ this.masterpiece.user.pseudo }}
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="messages-masterpiece">
+                <div class="collapse collapse-vertical message" id="collapseCommentMasterpiece{{ this.masterpiece.id }}">
+                    <div class="card card-body" style="width: 288px;">
+                       {% for message in this.masterpiece.comment.snapshot %}
+                       <ul>
+                            {{message.user.firstname}}
+                            <li>{{message.comment}}</li>
+                       </ul>
+                       {% endfor %}
+                   </div>
+                </div>
+            </div>
+</div>

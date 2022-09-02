@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=Shrikhand&display=swap');
+
+
+a, h1 {
+ font-family: 'Arapey', serif;
+ color:rgb(3, 36, 90);  
+ }
+
+
+.artists{
+  margin: auto;
+  text-align: center;
+  padding: 60px;
+}
+
+.col{
+  padding: 20px;
+}
+
+
+.form-control {
+  background: #ffffff;
+  border-color: #363535;
+}
+
+
+footer {
+  background: rgb(184, 229, 230);
+}
+
+.containerfooter{
+  font-family: 'Arapey', serif;
+  color:rgb(3, 36, 90); 
+}
+
+.text-dark{
+ font-family: 'Shrikhand', cursive;
+}

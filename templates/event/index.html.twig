@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('event') }}
+{% endblock %}
+
+<title>Event index</title>
+
+{% block body %}
+    <h1>Les événements</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Début</th>
+                <th>Fin</th>
+           </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.title }}</td>
+                <td>{{ event.beginAt ? event.beginAt|date('Y-m-d') : '' }}</td>
+                 <td>{{ event.endAt ? event.endAt|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_event_show', {'id': event.id}) }}">Voir</a>
+                    <a href="{{ path('app_event_edit', {'id': event.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_event_new') }}">Créer un nouvel événement</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'extentions/layouts/layout_buyer.html.twig' %}
+
+
+            
+{% block body %}
+
+<ul>
+
+  <li><a href="{{ path('buyer_account') }}">Account</a></li>
+  <li><a href="{{ path('buyer_basket') }}">Basket</a></li>
+  <li><a href="{{ path('buyer_messages') }}">Messages</a></li>
+  <li><a href="{{ path('buyer_purchasehistory') }}">Purchase History</a></li>
+
+</ul>
+
+{% endblock %}
+
+
+

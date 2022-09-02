@@ -1,0 +1,60 @@
+<div {{ attributes }} class="m-4">
+    <label for="search"> chercher une oeuvre : 
+    </label>
+    <input
+        type="search"
+        name="query"
+        value="{{ query }}"
+        data-action="live#update"
+    >
+
+    <label for="search"> chercher un(e) artist(e) : 
+    </label>
+    <input
+        type="search"
+        name="query2"
+        value="{{ query2 }}"
+        data-action="live#update"
+    >
+
+    {% if this.masterpieces|length > 0 %}
+            <div class="recup-cards">
+            {% for masterpiece in this.masterpieces %}
+                {{ component('masterpiece', {
+                    'id': masterpiece.id
+                    }) }}
+            {% endfor %}
+            </div>
+            {% else %}
+                {% if this.query != null %}
+                <div>Nous n'avons pas trouvé d'oeuvre nomée "{{ query }}"</div>
+                {% elseif this.query2 != null %}
+                <div>Nous n'avons pas trouvé d'artiste nomée "{{ query2 }}"</div>
+                {% endif %}
+    {% endif %}
+</div>
+<script>
+document.getElementById('like-action').addEventListener('click', addToLikelist);
+console.log('test');
+function addToLikelist(event) {
+    event.preventDefault();
+    // Get the link object you click in the DOM
+    let likelistLink = event.currentTarget;
+    let link = likelistLink.href;
+    // Send an HTTP request with fetch to the URI defined in the href
+    fetch(link)
+    // Extract the JSON from the response
+        .then(res => res.json())
+    // Then update the icon
+        .then(function(res) {
+            let likelistIcon = likelistLink.firstElementChild;
+            if (res.isInLikelist) {
+                likelistIcon.classList.remove('bi-heart'); // Remove the .bi-heart (empty heart) from classes in <i> element
+                likelistIcon.classList.add('bi-heart-fill'); // Add the .bi-heart-fill (full heart) from classes in <i> element
+            } else {
+                likelistIcon.classList.remove('bi-heart-fill'); // Remove the .bi-heart-fill (full heart) from classes in <i> element
+                likelistIcon.classList.add('bi-heart'); // Add the .bi-heart (empty heart) from classes in <i> element
+            }
+        });
+        }
+</script>

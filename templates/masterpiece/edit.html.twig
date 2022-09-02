@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<title>Edit Masterpiece</title>
+
+{% block body %}
+    <h1>Edit Masterpiece</h1>
+
+    {{ include('masterpiece/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_masterpiece_index') }}">back to list</a>
+
+    {{ include('masterpiece/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% block header %}
+    <div class="navbarclass">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b8e5e6;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/front/home">
+            <img src="{{ asset('build/images/mindart_logo.jpeg')}}" class="mindart-logo"/>
+            Mind'Art</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+            <div class="nav-content">
+                <div class="nav-menu">
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('users_gallery_index') }}">Galerie</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('users_artists_index') }}">Artistes</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('users_advice_index') }}">Conseils</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('email_send') }}">testmail</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_logout') }}">logout</a>
+                    </li>
+                </div>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ path('users_event_index') }}">Evenements</a>
+                </li>
+                <li class="nav-item-user-logo">
+                <a class="nav-link" href="#">
+                <img src="{{ asset('build/images/pinceau_logo.svg')}}" class="logoUser"/>
+                </a>
+                </li>
+            </div>
+            </ul>
+            </div>
+        </div>
+        </nav>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+grumphp:
+    tasks:
+        composer:
+            file: ./composer.json
+        eslint:
+            bin: node_modules/.bin/eslint
+            config: .eslintrc.yml
+        phpversion:
+            project: '8.1'
+        phpcpd:
+            directory: [ 'src' ]
+        phpcs:
+            standard: ~
+        phpstan:
+            configuration: ./phpstan.neon
+            level: 6
+                          
+        phpmd:
+            whitelist_patterns:
+                - 'src'
+            exclude:
+                - '\src\Kernel.php'
+                - '/src/Repository/MessagesRepository.php'
+                - '/src/Repository/DiscussionRepository.php'
+                - '/src/Repository/BasketRepository.php'
+                - '/src/Repository/CommentRepository.php'
+                - '/src/Repository/EventRepository.php'
+                - '/src/Repository/LikeRepository.php'
+                - '/src/Repository/MasterpieceRepository.php'
+                - '/src/Repository/OrderRepository.php'
+                - '/src/Repository/PageRepository.php'
+                - '/src/Repository/ParametersRepository.php'
+                - '/src/Repository/SubscriptionRepository.php'
+               
+            
+            ruleset:
+                - 'phpmd.xml'

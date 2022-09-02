@@ -1,0 +1,11 @@
+{% extends 'extentions/layouts/layout_users.html.twig' %}
+
+{% block stylesheets %}{{ encore_entry_link_tags('gallery') }}{% endblock %}
+
+{% block title %}Galerie{% endblock %}
+
+{% block body %}
+
+    {{ component('masterpiece_search') }}
+
+{% endblock %}

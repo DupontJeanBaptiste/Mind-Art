@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<title>New Event</title>
+{% block stylesheets %}
+    {{ encore_entry_link_tags('event') }}
+{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouvel événement</h1>
+
+    <div class="createevent">
+
+    {{ include('event/_form.html.twig') }}
+ </div>
+
+    <a href="{{ path('app_event_index') }}">Retour à la liste</a>
+   
+{% endblock %}

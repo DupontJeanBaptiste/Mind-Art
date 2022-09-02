@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=Shrikhand&display=swap');
+@import "navbar";
+
+h1{
+    font-family: 'Shrikhand', cursive;
+    padding: 40px;
+    text-align: center;
+}
+
+.container{
+    padding: 40px;
+}
+
+.card{
+    padding: 20px;
+}
+
+.textadvice{
+    font-family: 'Arapey', serif;
+    font-size:1.5rem;
+    text-align: center;
+}

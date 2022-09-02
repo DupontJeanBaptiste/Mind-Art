@@ -1,0 +1,5 @@
+{% for masterpiece in this.masterpieces %}
+    {{ component('masterpiece', {
+        'id': masterpiece.id
+    }) }}
+{% endfor %}

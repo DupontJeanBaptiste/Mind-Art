@@ -1,0 +1,53 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=Shrikhand&display=swap');
+
+body{
+    font-family: 'Arapey', serif;
+    color:rgb(3, 36, 90);  
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom, #fcb52e, #fcb742, #fbb953, #f9bb62, #f7bd71, #fcbc80, #ffbb8e, #ffbc9c, #ffbcaf, #ffbfc4, #ffc4d7, #fccae7);
+}
+
+.row{
+  flex-direction: column;
+}
+
+.mindart{
+  padding: 40px;
+  text-align: center;
+  
+}
+
+
+
+h1{
+    text-align: center;
+    padding: 50px;
+    font-family: 'Shrikhand', cursive;
+    color:rgb(3, 36, 90);  
+}
+
+h3{
+  text-align: center;
+}
+
+.registerform{
+    display: flex;
+    justify-content: center;
+  } 
+
+.btn-primary{
+    background-color: rgb(3, 36, 90);
+    color: white;
+    border-color: rgb(3, 36, 90);
+    border-radius: 20px;
+}
+
+.btn1{
+   display: flex;
+   padding: 100px;
+   justify-content:space-evenly;
+   align-items:center;
+}
+
+

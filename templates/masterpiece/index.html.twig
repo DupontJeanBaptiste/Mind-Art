@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<title>Masterpiece index</title>
+
+{% block body %}
+    <h1>Masterpiece index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Display</th>
+                <th>Status</th>
+                <th>Picture</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for masterpiece in masterpieces %}
+            <tr>
+                <td>{{ masterpiece.id }}</td>
+                <td>{{ masterpiece.name }}</td>
+                <td>{{ masterpiece.price }}</td>
+                <td>{{ masterpiece.description }}</td>
+                <td>{{ masterpiece.display ? 'Yes' : 'No' }}</td>
+                <td>{{ masterpiece.status }}</td>
+                <td>{{ masterpiece.picture }}</td>
+                <td>
+                    <a href="{{ path('app_masterpiece_show', {'id': masterpiece.id}) }}">show</a>
+                    <a href="{{ path('app_masterpiece_edit', {'id': masterpiece.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_masterpiece_new') }}">Create new</a>
+{% endblock %}

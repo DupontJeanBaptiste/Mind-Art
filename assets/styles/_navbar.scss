@@ -1,0 +1,40 @@
+
+.logoUser {
+    height: 40px;
+    width: 40px;
+    margin-left: 10vw;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-menu{
+    display: flex;
+}
+
+.nav-menu,.nav-item {
+    padding-right: 3vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arapey;
+    font-size: larger;
+}
+
+.navbar-brand {
+    font-family: Shrikhand;
+    font-size: xx-large;
+}
+
+#navbarSupportedContent {
+    flex-direction: row-reverse;
+}
+
+.nav-content {
+    display: flex;
+}

@@ -1,0 +1,68 @@
+{% extends 'extentions/layouts/layout_users.html.twig' %}
+
+{% block title %}Conseils{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('conseil') }}
+{% endblock %}
+
+{% block body %}
+  
+    <h1>
+    Mind'art vous conseille!
+    </h1>
+<div class="container">
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="{{ asset('build/images/romain.jpeg') }}"alt="" class="card-img-top" alt="...">
+      <div class="card-body">
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+          <img src="{{ asset('build/images/natacha.jpeg') }}"alt=""  class="card-img-top" alt="...">
+      <div class="card-body">
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+          <img src="{{ asset('build/images/sacha.jpeg') }}"alt=""  class="card-img-top" alt="...">
+      <div class="card-body">
+      </div>
+    </div>
+  </div>
+   <div class="col">
+    <div class="card">
+          <img src="{{ asset('build/images/vincent.jpeg') }}"alt=""  class="card-img-top" alt="...">
+      <div class="card-body">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="textadvice">
+<p> Notre équipe est là pour vous conseiller et s’adresse: <br>
+- à l’amateur d’un jour <br>
+- à l’amateur de toujours <br>
+- Au collectionneur averti <br></p>
+
+
+<p> Contactez-nous par mail: 
+
+mindart@gmail.com
+
+ou par téléphone, 
+du lundi au vendredi de 9h à 17h au 
+03 88 XX XX XX</p>
+
+
+</div>
+
+
+
+
+{% endblock %}

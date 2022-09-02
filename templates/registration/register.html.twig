@@ -1,0 +1,41 @@
+{% extends 'extentions/layouts/layout_login.html.twig' %}
+{% block header %}{% endblock %}
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+     <div class="mindart">
+   <img src="{{ asset('build/images/logo.jpeg') }}"alt="logo" width="160" height="140">
+        <h1>
+           Mind'Art
+        </h1>
+        <h3>Au service de l'art et de l'esprit</h3>
+    </div>
+
+    <div class="container">
+    <div class="registerform">
+    <div class="row">
+    
+    {{ form_start(registrationForm) }}
+     <div class= "col-md-5">
+     {{ form_row(registrationForm.firstname) }}
+        {{ form_row(registrationForm.lastname) }}
+        {{ form_row(registrationForm.phone) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+          {{ form_row(registrationForm.roles) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+          </div>
+      <button type="submit" class="btn btn-primary">S'inscrire</button>
+         {#<button class="btn btn-primary" type="button"  data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample2">S'inscrire</button>
+     #}
+    {{ form_end(registrationForm) }}
+     <a href="/">Retour vers la connexion</a>
+      </div>
+        </div>
+        </div>
+{% endblock %}
+

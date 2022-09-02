@@ -1,0 +1,9 @@
+{% block alertscript %}
+ <script>
+	setTimeout(() => {
+let message = document.querySelector('.alert');
+message.remove();
+}, "20000");
+</script>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+.card{
+    flex-direction: row-reverse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    height: 30vh;
+    margin-top: 5vh;
+    box-shadow: 5px 5px 6px 2px rgba(0,0,0,0.74);
+}
+
+.card-img-top{
+    width: 250px;
+    height: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1vw;
+}
+
+.artist-info{
+    margin-left : 1vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.line{
+    border-left: 10px double #000000;
+    height: 28vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}

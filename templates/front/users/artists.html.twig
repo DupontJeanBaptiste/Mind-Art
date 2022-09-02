@@ -1,0 +1,27 @@
+{% extends 'extentions/layouts/layout_users.html.twig' %}
+
+{% block stylesheets %}{{ encore_entry_link_tags('artists') }}{% endblock %}
+
+{% block title %}Artistes{% endblock %}
+
+{% block body %}
+    {% for artist in artists %}
+        <div class="card">
+
+            <img
+            {% for parameter in artist.parameters.snapshot %}
+            src="{{ parameter.picture }}"
+            {% endfor %}
+            class="card-img-top" alt="{{ artist.pseudo }}-picture">
+
+            <div class="line"></div>
+
+            <div class="artist-info">
+                <h5 class="card-title">{{artist.pseudo}}</h5>
+                <p class="card-biography">Biographie : {{artist.biography}}</p>
+                <p class="card-art">Type d'art : </p>
+                <p class="card-tailored">Sur mesure : </p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
